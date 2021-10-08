@@ -4,14 +4,97 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="269.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.zilab2.HelloController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="532.0" spacing="20.0" style="-fx-background-color: lightcyan;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zilab2.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <TextField fx:id="inputText" />
-   <TextField fx:id="outputText" />
-    <Button fx:id="incodeBtn" onAction="#onInCodeButtonClick" text="Hello!" />
-   <Label fx:id="labelE" text="Label" />
-   <Label fx:id="labelN" text="Label" />
-   <Label fx:id="labelD" text="Label" />
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <VBox alignment="CENTER" spacing="10.0" HBox.hgrow="NEVER">
+            <children>
+               <HBox prefHeight="0.0" prefWidth="229.0">
+                  <children>
+                     <Label fx:id="labelP" text="p  " />
+                     <TextField fx:id="p_inputText" />
+                  </children>
+               </HBox>
+               <HBox prefHeight="14.0" prefWidth="229.0">
+                  <children>
+                     <Label fx:id="labelQ" text="q  " />
+                     <TextField fx:id="q_inputText" />
+                  </children>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="63.0" prefHeight="14.0" prefWidth="229.0">
+                  <children>
+                     <Label fx:id="labelM" text="m " />
+                     <TextField fx:id="m_Text" />
+                  </children>
+               </HBox>
+            </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+         <VBox prefHeight="52.0" prefWidth="242.0" spacing="10.0">
+            <children>
+               <Button fx:id="generate_button" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onGenerateButtonClick" prefHeight="0.0" prefWidth="242.0" style="-fx-background-color: linear-gradient(#90ffff, #afb5f5);" text="Сгенерировать простые числа" textAlignment="CENTER" />
+                <Button fx:id="encrypt_button" alignment="CENTER" onAction="#onEncryptButtonClick" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: linear-gradient(#90ffff, #afb5f5);" text="Зашифровать" textAlignment="CENTER" />
+            </children>
+         </VBox>
+      </children>
+   </HBox>
+   <Label fx:id="labelD1" layoutX="101.0" layoutY="163.0" prefHeight="21.0" prefWidth="130.0" text="Открытый ключ">
+      <padding>
+         <Insets left="18.0" />
+      </padding>
+   </Label>
+   <VBox spacing="10.0">
+      <children>
+         <HBox prefHeight="0.0" prefWidth="229.0">
+            <children>
+               <Label fx:id="labelE" text="e  " />
+               <TextField fx:id="e_Text" />
+            </children>
+         </HBox>
+         <HBox prefHeight="14.0" prefWidth="229.0">
+            <children>
+               <Label fx:id="labelN" text="n  " />
+               <TextField fx:id="n_Text" />
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+   <Label fx:id="label" prefHeight="21.0" prefWidth="140.0" text="Закрытый ключ">
+      <padding>
+         <Insets left="18.0" />
+      </padding></Label>
+   <HBox layoutX="30.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <VBox prefHeight="20.0" prefWidth="231.0" spacing="10.0" HBox.hgrow="NEVER">
+            <children>
+               <HBox prefHeight="31.0" prefWidth="275.0">
+                  <children>
+                     <Label fx:id="labelD" text="d  " />
+                     <TextField fx:id="d_Text" />
+                  </children>
+               </HBox>
+            </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+         <Button fx:id="decipher_button" alignment="CENTER" onAction="#onDecipherButtonClick" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: linear-gradient(#90ffff, #afb5f5);" text="Расшифровать" textAlignment="CENTER" />
+      </children>
+   </HBox>
+   <HBox prefHeight="28.0" prefWidth="437.0">
+      <children>
+         <Button fx:id="open_in_file_button" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#onOpenInFileButtonClick" prefWidth="150.0" style="-fx-background-color: linear-gradient(#90ffff, #afb5f5);" text="Исходный текст">
+            <HBox.margin>
+               <Insets left="18.0" />
+            </HBox.margin></Button>
+         <Button fx:id="open_out_file_button" maxWidth="242.0" minWidth="242.0" mnemonicParsing="false" prefWidth="242.0" style="-fx-background-color: linear-gradient(#90ffff, #afb5f5);" text="Зашифрованный текст">
+            <HBox.margin>
+               <Insets left="63.0" />
+            </HBox.margin></Button>
+      </children></HBox>
 </VBox>
